@@ -75,19 +75,25 @@ function updateAnswer(letter, selected_word){
 
 function WinOrLose(isVictory){
     if(isVictory === false){
-        alert("Oops, Try again. The correct word is: " + selected_word);
+        answer_section.innerHTML = selected_word;
+        setTimeout(() =>{
+            alert("Oops, Try again.");
+        })
 
     }
     else{
         alert("Excellent!! You Wins! The word is: " + selected_word);
     }
-    start_new_game = prompt("Start a new game?").toLowerCase();
-    if (start_new_game === "yes"){
-        startGame();
-    }
-    else{
-        alert("Okay! Hope you nice day!");
-    }
+    setTimeout(() =>{
+        start_new_game = prompt("Start a new game?").toLowerCase();
+        if (start_new_game === "yes"){
+            startGame();
+        }
+        else{
+            alert("Okay! Hope you nice day!");
+        }
+    }, 1000);
+    
 }
 
 startGame();
